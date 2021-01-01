@@ -85,7 +85,8 @@ public class HelloWorld {
 JVM은 자바 실행코드가 `컴파일러`에 의해 자바 바이트코드로 변환된 것을       
 각각의 하드웨어에 맞게 실행하는 개념으로 잡으면 나중의 이해에 도움이 될 것이라 생각한다.       
 
-출처: https://odol87.tistory.com/5 [IT 인생]
+출처: https://odol87.tistory.com/5
+
 <img src="https://github.com/kimdm1994/white-ship/blob/main/images/image8.png" width="400px">     
 클래스 로더가 바이트 코드를 `런타임 데이터 영역`에 로드하고, 실행 엔진이 바이트코드를 실행하는 구조이다.
 
