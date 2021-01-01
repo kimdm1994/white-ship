@@ -12,13 +12,14 @@
 + if 문
 + if - else 문
 + switch 문
-if 문
+
+### if 문
 ```java
 if(조건식) {
     // 조건식이 true 일 때, 반환한다.
 }
 ```
-if - else 문
+### if - else 문
 ```java
 if(조건식) {
     // 조건식이 true일 때, 반환하고 else-if문으로 넘어가지 않는다
@@ -30,7 +31,7 @@ if(조건식) {
     // if, else-if문이 false일 때, 반환한다.
 }
 ```
-switch 문
+### switch 문
 ```java
 switch(동등비교대상자) {
     case 값 1:
@@ -54,7 +55,8 @@ switch(동등비교대상자) {
 + for 문
 + while 문
 + do - while 문
-for 문
+
+### for 문
 ```java
 for(초기식; 조건식; 증감식) {
     // 반복적으로 실행시키고자하는 실행구문
@@ -81,7 +83,7 @@ public void method2() {
 ```
 결과는 ` 합계 : 55 `를 출력한다.
 
-while 문
+### while 문
 `while문` 은 조건식이 `true` 일 경우 해당 실행코드를 실행한다.    
 조건식이 `false`일 경우 해당 반복문을 종료한다.     
 횟수가 정해지지않은 반복 처리에 주로 사용된다.     
@@ -108,7 +110,7 @@ public static void main(String[] args) {
 ```
 결과는 ` 합계 : 55 ` 를 출력한다.    
 
-do - while 문
+### do - while 문
 ```java
 do{
     // 반복적으로 실행할 코드;
