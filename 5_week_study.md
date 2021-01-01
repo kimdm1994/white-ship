@@ -24,7 +24,7 @@ class charactor_info {
     // 캐릭터 기능
     void levelUp() {
     ++level; // 레벨업
-	}
+    }
 }
 ```
 클래스를 만들어보았다. 여기서 `charactor_info` 은 `클래스명` 을 뜻한다.
