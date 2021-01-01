@@ -275,42 +275,223 @@ public static void main(String[] args) {
 `instanceof`는 참조변수의 실제 타입을 알아보기 위해 사용한다.    
 주로 조건문에 사용되며, `boolean값으로 반환`해주고 true가 나올경우 검사한 타입으로 `형변환`이 가능하다라는 것을 뜻한다.
 ```java
-	public static void main(String[] args) {
-		Parents p = new Parents();
-		
-		if (p instanceof Object) {
-			System.out.println("true"); // true
-		}
-	}
+public static void main(String[] args) {
+    Parents p = new Parents();
+
+    if (p instanceof Object) {
+        System.out.println("true"); // true
+    }
+}
 ```
 만약에, `부모클래스가` 자식클래스를 `instanceof` 연산을 사용하여 형변환을 하려고한다면 어떤 값을 반환할까?
 ```java
-	public static void main(String[] args) {
-		Parents p = new Parents();
-		
-		if (p instanceof Children) {
-			System.out.println("true");
-		} else {
-			System.out.println("false");
-		}
-	}
+public static void main(String[] args) {
+    Parents p = new Parents();
+
+    if (p instanceof Children) {
+        System.out.println("true");
+    } else {
+        System.out.println("false");
+    }
+}
 ```
 결론은 `false`를 반환하게된다. 부모가 자식이 되려했기 때문이다.
 반대로, `자식클래스가` 부모클래스를 `instanceof` 연산을 사용하여 형변환을 하게될 경우이다.
 ```java
-	public static void main(String[] args) {
-		Parents p = new Parents();
-		Children c = new Children();
-		
-		if (c instanceof Parents) {
-			System.out.println("true");
-		} else {
-			System.out.println("false");
-		}
-	}
+public static void main(String[] args) {
+    Parents p = new Parents();
+    Children c = new Children();
+
+    if (c instanceof Parents) {
+        System.out.println("true");
+    } else {
+        System.out.println("false");
+    }
+}
 ```
 결론은 `true`를 반환하게된다.
 이처럼, 부모는 자식이 될 수 없지만 자식은 부모로 `형변환`이 가능하다는 결론을 얻을 수 있었다.
 
 ---
+#### 대입 연산자
+`대입 연산자`는 오른쪽의 값을 왼쪽의 값에 대입을 한다.
+```
+public static void main(String[] args) {
+    int A = 3;
+    int B = A; // B = 3
+}
+```
+이처럼, `오른쪽에 있는 값`을 `왼쪽에 있는 변수`에 대입을 하게된다.   
+대입 연산자의 종류는 `=, +=, -=, *=, /=, %=, &=, |=, ^=, <<=, >>=, >>>=`가 있는데,   
+`A += B`를 예시로 설명하자면, `A = A + B`라고 할 수 있다.    
+다른 연산자 기호도 같은 방법으로 연산하게 된다.   
 
+---
+#### 화살표 (-> 연산자)
+람다식이란 함수를 따로 만들지않고 코드 한줄에 함수를 써서 호출하는 방식이다.
+`JAVA 8` 부터 람다식(Lambda Expressions)을 지원한다.
+
+람다식의 사용 방법으로는 `(매개변수, ...) -> {실행문 ... }`이며,   
+매개 변수의 이름은 개발자가 자유롭게 지정가능하고 인자타입도 명시하지 않아도 된다.
+
+`람다식 장점`
+1. 코드를 간결하게 만들 수 있다.
+2. 코드가 간결하고 식에 개발자의 의도가 명확히 드러나므로 가독성이 향상된다.
+3. 함수를 만드는 과정없이 한번에 처리할 수 있기에 코딩하는 시간이 줄어든다.
+4. 병렬프로그래밍이 용이하다.
+
+`람다식 단점`
+1. 람다를 사용하면서 만드는 무명함수는 재사용이 불가능하다.
+2. 디버깅이 까다롭다.
+3. 비슷한 함수를 중복생성할 가능성이 높다.
+4. 재귀로 만들경우 다소 부적합한면이 있다.
+
+참조 : <https://coding-factory.tistory.com/265>
+
+---
+#### 3항 연산자
+3항 연산자는 if-else문과 같은 기능을 하며, 조건에따라 true 또는 false를 반환하는 조건식이다.
+`조건식? 조건식1:조건식2`으로 표기하며, 조건식이 `true`라면 조건식1을 반환하고 `false`라면 조건식2를 반환한다. 
+```java
+public static void main(String[] args) {
+    int A = 10;
+    int B = 20;
+
+    System.out.println(( A > B ) ? true : false );
+}
+```
+결과는 `true` 이처럼 활용만 잘 할경우 if-else문보다 `코드 간결화`를 할 수 있다.
+
+---
+#### 연산자 우선순위
+연산자의 우선순위로는 `산술 > 비교 > 논리 > 대입` 순서이며, `단항 > 이항 > 삼항` 순서이다.
+연산의 진행방향으로는 `왼쪽에서 오른쪽` 이고, 대입의 진행방향으로는 `오른쪽에서 왼쪽` 으로 수행된다.
+
+<table border="1">
+<tr>
+   <th>우선순위</th>
+   <th>연산자</th>
+   <th>설명</th>
+</tr>
+<tr>
+   <th>1</th>
+   <th>(), []</th>
+   <th>괄호, 대괄호</th>
+</tr>
+<tr>
+   <th>2</th>
+   <th>!, ~, ++, --</th>
+   <th>부정, 증감 연산자</th>
+</tr>
+<tr>
+   <th>3</th>
+   <th>*, /, %</th>
+   <th>곱셈, 나눗셈 연산자</th>
+</tr>
+<tr>
+   <th>4</th>
+   <th>+, -</th>
+   <th>덧셈, 뺄셈 연산자</th>
+</tr>
+<tr>
+   <th>5</th>
+   <th><<, >>, >>></th>
+   <th>비트단위의 쉬프트 연산자</th>
+</tr>
+<tr>
+   <th>6</th>
+   <th><, <=, >, >=</th>
+   <th rowspan="2">관계 연산자</th>
+</tr>
+<tr>
+   <th>7</th>
+   <th>==, !=</th>
+</tr>
+<tr>
+   <th>8</th>
+   <th>&</th>
+   <th rowspan="3">비트단위의 논리연산자</th>
+</tr>
+<tr>
+   <th>9</th>
+   <th>^</th>
+</tr>
+<tr>
+   <th>10</th>
+   <th>|</th>
+</tr>
+<tr>
+   <th>11</th>
+   <th>&&</th>
+   <th>논리곱 연산자</th>
+</tr>
+<tr>
+   <th>12</th>
+   <th>||</th>
+   <th>논리합 연산자</th>
+</tr>
+<tr>
+   <th>13</th>
+   <th>?:</th>
+   <th>조건 연산자</th>
+</tr>
+<tr>
+   <th>14</th>
+   <th>=, +=, -=, *=, /=, %=, <<=, >>=, &=, ^=, ~=</th>
+   <th>대입, 할당 연산자</th>
+</tr>
+</table>
+
+---
+#### (optional) Java 13. switch operator
+`기존 switch 구문`
+```java
+public void printDay(Day today) {
+    switch (today) {
+        case MON:
+        case TUE:
+        case WED:
+        case THUR:
+        case FRI:
+	    System.out.println(today.name() + " is Weekday");
+	    break;
+        case SAT:
+        case SUN:
+            System.out.println(today.name() + " is Weekend");
+	    break;
+    }
+}
+```
+`break`의 위치에 따라 실행 결과가 달라질 수 있기 때문에 개발자가 의도적으로 `break`를 했는지 실수인지 파악하기 어렵다.   
+
+`강화된 switch 표현식`
+```java
+public void printDay(Day today) {
+    switch (today) {
+        case MON, TUE, WED, THUR, FRI -> System.out.println(today.name() + " is Weekday");
+        case SAT, SUN -> System.out.println(today.name() + " is Weekend");
+    }
+}
+```
+여러 조건에 따라 `', '`로 구분해서 한 번에 처리할 수 있다.   
+단일 실행으로 `->`만 추가했지만, `{ }` 형태로 구문을 만들 수 있다.   
+`->` 대신 `:`를 사용해서 예전 방식으로 사용할 수 있다.   
+`반환값이 있는 표현식을 블록('{ }') 구문으로 사용`
+```java
+public String printDay(Day today) {
+    String result = switch (today) {
+        case MON, TUE, WED, THUR, FRI -> today.name() + " is Weekday";
+        case SAT, SUN -> {
+            System.out.print("Holiday! ");
+            yield today.name() + " is Weekend";
+        }
+    };
+    return result;
+}
+```
+`yield` 키워드를 사용해서 반환, `return` 키워드를 사용하면 컴파일 에러가 발생한다.   
+
+출처 : <https://dev-kani.tistory.com/21>
+
+---
+`#live-study``#white-ship`
