@@ -118,9 +118,9 @@ public class User {
     private char gender;
 
 public User() {
-     기본생성자(매개변수 없는 생성)
-     객체 생성만을 목적으로 사용된다.
-     기본 생성자를 생략하는 경우 -> 오류? -> 노노(JVM이 자동으로 만들어줬기 때문에 항상 객체 생성이 가능했다.)
+    // 기본생성자(매개변수 없는 생성)
+    // 객체 생성만을 목적으로 사용된다.
+    // 기본 생성자를 생략하는 경우 -> 오류? -> 노노(JVM이 자동으로 만들어줬기 때문에 항상 객체 생성이 가능했다.)
 
      System.out.println("User() 기본 생성자 호출");
 }
@@ -137,7 +137,7 @@ public User(String id, String pwd, String name) {
 위의 예제처럼 생성자의 `매개변수 이름` 과 `인스턴스 변수` 의 이름이 같을 경우 `this` 키워드를 붙여서 구분해야 한다.    
 
 ---
-`#white-study` `#live-study` `#5`
+`#white-study` `#live-study` `#5주차`
 
 
 
