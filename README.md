@@ -114,9 +114,117 @@ result의 크기 : -128
 레퍼런스 타입의 종류로는 클래스 타입, 인터페이스 타입, 배열 타입, 열거 타입으로 나누어져 있으며, 
 실제 값이 아닌 해당 값을 참조하는 값이 메모리상에 저장된다.
 ```
-
-
-
-
+```java
+class Dog {
+    String name;
     
+    Dog(String t) {
+        this.name = t;
+    }
+}
+
+public class Exam_001 {
+    public static void main(String[] args) {
+        int age = 15;
+        Dog d = new Dog(new String("a"));
+        Dog d2 = new Dog(new String("b"));
+        
+        System.out.println(age);
+        System.out.println(d.name + " " + d2.name);
+    }
+}
+```
+<img src="https://github.com/kimdm1994/white-ship/blob/main/images/image1.png" width="250px">
+
+출처 : <https://blog.naver.com/chogahui05/221483768407>
+
+```
+위의 자료를 참조해서 직접 테스트를 해보았다.    
+참고로 이클립스(eclipse)에서 디버그(Debug)에 대해서 잘 모르고있었는데, 이를 통해 배울 수 있는 계기가 되었다.    
+결론을 말하자면, age라는 변수에는 리터럴 값이 15가 바로 출력이 되었다.   
+하지만, new를 이용하여 객체를 생성한 후 "a"와 "b"를 출력하였을 때, 디버깅 결과 Dog이라는 결과값이 나오는걸 볼 수 있다.   
+이러한 결과는 d와 d2가 Dog이라는 객체를 참조(reference)한다고 한다.    
+결론적으로 프리미티브 타입과 레퍼런스의 차이는 실제 값을 저장하느냐, 
+아니면 어딘가를 참조하기 위한 값을 저장하느냐의 차이라고 볼 수 있다.   
+```
+---
+`리터럴`
+```
+리터럴(literal)이란 소스 코드의 고정된 값을 대표하는 용어이다.   
+"고정된 값 = 변하지 않는"값 을 말하며, 하드코딩된 값 들을 말한다.   
+아래 코드 7번줄에 10이라는 상수가 저장되었지만, 결과값에는 20이라는 상수가 저장된것을 볼 수 있다.   
+리터럴은 소스코드에 고정된 값을 말하지만, 새로운 값을 변수에 대입하게되면 변경이 가능하다.   
+```
+```java
+public static void main(String[] args) {
+    int age:
+    age = 10;
+    age = 20;
+    
+    // 실수타입의 리터럴은 double타입으로 컴파일되기 때문에
+    // float타입은 f or F를 명시해줘야한다.
+    short s = 32767;
+    int i = 100;
+    long l = 10000L;
+    float f = 0.123f;
+    double d = 3.14;
+    char c = 'A';
+    String str = "ABC";
+    
+    System.out.println("int age : " + age);
+    System.out.println("short s : " + s);
+    System.out.println("int i : " + i);
+    System.out.println("long l : " + l);
+    System.out.println("float f : " + f);
+    System.out.println("double d : " + d);
+    System.out.println("char c : " + c);
+    System.out.println("String str : " + str);
+}
+```
+```
+int age : 20   
+short s : 32767   
+int i : 100   
+long l : 10000   
+float f : 0.123   
+double d : 3.14   
+char c : A   
+String str : ABC
+```
+---
+`변수 선언 및 초기화하는 방법`
+```
+변수를 선언하고 처음으로 값을 저장하는 것을 변수 초기화 라고 한다.   
+멤버 변수는 초기화를 하지 않아도 변수의 타입에 맞는 기본값으로 초기화가 이루어지지만   
+지역변수는 사용하기 전에 반드시 초기화가 이루어져야한다.   
+각 자료타입에 맞는 기본형은 위의 자료를 보면 알 수 있다.   
+```
+```java
+public static void main(String[] args) {
+    int a = 0; // 선언과 동시에 초기화
+    int b; // 정수형 변수 선언
+    b = 0; // 선언 후 초기화
+}
+```
+---
+`변수의 스코프와 라이프타임`
+```
+변수의 스코프(영역)이란 변수에 접근하거나 접근할 수 있는 유효 범위/영역이다.   
+블록은 { 내용 }으로 이루어져있다.   
+라이프타임은 변수가 메모리에서 살아있는 기간이다.   
+변수의 스코프와 라이프타임이란 클래스 내부와 모든 메소드 및 블록 외부에서 선언된 변수이다.   
+```
+```java
+public class Exam_001 {
+    static int insValue = 10; // {}블록 내에 접근하기 위해 선언
+    
+    public static void main(String[] args) {
+        insValue = 20; // 로컬 변수 20
+        System.out.println("result : " + insValue);
+    }
+}
+```
+```
+result : 20
+```
 
