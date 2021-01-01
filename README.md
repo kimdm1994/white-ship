@@ -419,7 +419,7 @@ public static void main(String[] args) {
 `Lambda Expression`에는 명시적인 타입을 지정해줘야 한다.   
 배열을 선언할 때, `var`대신 타입을 명시해줘야 한다.
 
-<img src="https://github.com/kimdm1994/white-ship/blob/main/images/image3.png" width="350px">   
+<img src="https://github.com/kimdm1994/white-ship/blob/main/images/image3.png" width="500px">   
 
 출처 : <https://catch-me-java.tistory.com/19>
 
