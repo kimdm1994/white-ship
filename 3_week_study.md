@@ -494,4 +494,4 @@ public String printDay(Day today) {
 출처 : <https://dev-kani.tistory.com/21>
 
 ---
-`#live-study``#white-ship`
+`#live-study` `#white-ship`
