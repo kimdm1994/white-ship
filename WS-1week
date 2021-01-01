@@ -87,7 +87,7 @@
 변수마다 값의 범위를 어느정도 알아둘 필요가있다.   
 ```
     
-<img src="D:/develop/white-ship/images">
+
 
 
 ```
@@ -95,6 +95,22 @@
 오버플로우(overflow)현상이 발생하기 때문이다.
 ```
 출처 : <https://kingpodo.tistory.com/54>
+
+```java
+public class overflow {
+   byte bNum = 127;
+   byte result = (byte)(bNUm + 1);
+   
+   System.out.println("bNum의 크기 : " + bNum);
+   System.out.println("result의 크기 : " + result);
+}
+```
+```
+bNum의 크기 : 127
+result의 크기 : -128
+```
+---
+
 
 
 
