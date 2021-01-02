@@ -452,7 +452,7 @@ public static void main(String[] args) {
 
 ---
 ### (optional) Java 13. switch operator
-`기존 switch 구문`
+**기존 switch 구문**
 ```java
 public void printDay(Day today) {
     switch (today) {
@@ -472,7 +472,7 @@ public void printDay(Day today) {
 ```
 `break`의 위치에 따라 실행 결과가 달라질 수 있기 때문에 개발자가 의도적으로 `break`를 했는지 실수인지 파악하기 어렵다.   
 
-`강화된 switch 표현식`
+**강화된 switch 표현식**
 ```java
 public void printDay(Day today) {
     switch (today) {
