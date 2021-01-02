@@ -358,7 +358,7 @@ public static void main(String[] args) {
 ### 3항 연산자
 ```
 3항 연산자는 if-else문과 같은 기능을 하며, 조건에따라 true 또는 false를 반환하는 조건식이다.
-`조건식? 조건식1:조건식2`으로 표기하며, 조건식이 `true`라면 조건식1을 반환하고 `false`라면 조건식2를 반환한다. 
+조건식? 조건식1:조건식2으로 표기하며, 조건식이 true라면 조건식1을 반환하고 false라면 조건식2를 반환한다. 
 ```
 ```java
 public static void main(String[] args) {
