@@ -1,4 +1,4 @@
-### 5주차 과제 : 상속
+### 6주차 과제 : 상속
 ---
 목표
 + 자바의 상속에 대해 학습하세요.
@@ -141,3 +141,58 @@ public class inheritTest {
 40
 20
 ```
++ 자바 컴파일러는 자동으로 첫 줄에 super(); 구문을 삽입한다.
+참조 : <http://www.tcpschool.com/java/java_inheritance_super>            
+
+---
+### 메소드 오버라이딩
+**메소드 오버라이딩**
++ 자식 클래스가 상속 받은 부모 클래스의 메소드를 재정의 하는 것이다.
++ 자식 객체를 통해 자식 메소드가 우선권을 가진다.
+**오버라이딩 성립 조건**
++ 부모 클래스의 메소드와 메소드명이 동일
++ 매개변수 개수, 자료형, 순서가 동일
++ 반환형 동일
++ 부모 메소드의 접근제한자 보다 범위가 같거나 커야한다.(public > protected > default > private)
+
+**예제**
+```java
+class Parent {
+
+    void display() {
+        System.out.println("부모 클래스의 display() 메소드입니다.");
+    }
+}
+
+class Child extends Parent {
+    void display() {
+        System.out.println("자식 클래스의 display() 메소드입니다.");
+    }
+}
+
+public class inheritTest {
+    public static void main(String[] args) {
+        Parent pa = new Parent();
+        pa.display();
+        Child ch = new Child();
+        ch.display();
+        Parent pc = new Child();
+        pc.display();
+    }
+}
+```
+**실행결과**
+```java
+부모 클래스의 display() 메소드입니다.
+자식 클래스의 display() 메소드입니다.
+자식 클래스의 display() 메소드입니다.
+```
+
+**오버로딩(Overloading)과 오버라이딩(Overriding)**
++ 오버로딩과 오버라이딩은 혼동하기가 쉽다. 하지만 개념을 확실히 해야한다.
++ 오버로딩(Overloading)은 새로운 매소드를 정의하는 것이다.
++ 오버라이딩(Overriding)은 상속받은 기존의 메소드를 재정의하는 것이다.
+
+---
+
+### 다이나믹 메소드 디스패치 (Dynamic Method Dispatch)
