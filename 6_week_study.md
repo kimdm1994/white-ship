@@ -201,9 +201,52 @@ public class inheritTest {
 **정적 디스패치(Static Dispatch)**
 + 컴파일 시점에서, 어떤 메소드를 호출할 것이지 알고있는 경우이다.
 + 상위(Super) 클래스가 존재하더라도, 서브 클래스를 레퍼런스로 선언하고 서브 클래스의 인스턴스를 만든것도 해당된다.
+```java
+public class Test {
+    public static void main(String[] arg) {
+        Dispatch dispatch = new Dispatch();
+        System.out.println(dispatch.method());
+    }
+}
+
+class Dispatch{
+    public String method(){
+        return "hello dispatch";
+    }
+}
+```
 
 **동적 디스패치(Dynamic Dispatch)**
 + 인터페이스 타입으로 메소드(Method)를 호출한다
 + 런타임(Runtime)시에 메소드(Method)의 호출이 결정이 된다.
 + 런타임시에 호출 객체를 알 수 있기에 어떤 객체에 메소드를 호출해야하는지 드러나지 않는다.
-https://multifrontgarden.tistory.com/133
+```java
+public class Test {
+    public static void main(String[] arg) {
+        Dispatchable dispatch = new Dispatch();
+        System.out.println(dispatch.method());
+    }
+}
+
+class Dispatch implements Dispatchable {
+    public String method(){
+        return "hello dispatch";
+    }
+}
+
+interface Dispatchable{
+    String method();
+}
+```
+출처: <https://multifrontgarden.tistory.com/133>
+**더블 디스패치**
++ Dispatch가 연속으로 이루어지는 것을 말한다
+
+---
+### 추상 클래스
+
+---
+### final 키워드
+
+---
+### Object 
