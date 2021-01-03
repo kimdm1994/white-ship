@@ -195,4 +195,14 @@ public class inheritTest {
 
 ---
 
-### 다이나믹 메소드 디스패치 (Dynamic Method Dispatch)
+### 다이나믹 메소드 디스패치 (Dynamic Method Dispatch)         
+메소드 디스패치(Method Dispatch)란 어떤 메소드를 호출할지 결정하여 실행하는것을 말한다.
+
+**정적 디스패치(Static Dispatch)**
++ 컴파일 시점에서, 어떤 메소드를 호출할 것이지 알고있는 경우이다.
++ 상위(Super) 클래스가 존재하더라도, 서브 클래스를 레퍼런스로 선언하고 서브 클래스의 인스턴스를 만든것도 해당된다.
+
+**동적 디스패치(Dynamic Dispatch)**
++ 인터페이스 타입으로 메소드(Method)를 호출한다
++ 런타임(Runtime)시에 메소드(Method)의 호출이 결정이 된다.
++ 런타임시에 호출 객체를 알 수 있기에 어떤 객체에 메소드를 호출해야하는지 드러나지 않는다.
