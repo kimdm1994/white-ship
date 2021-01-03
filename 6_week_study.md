@@ -90,6 +90,7 @@ public static void main(String[] args) {
     }
 }
 ```
+**실행결과**
 ```java
 20
 20
