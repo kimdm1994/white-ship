@@ -206,3 +206,4 @@ public class inheritTest {
 + 인터페이스 타입으로 메소드(Method)를 호출한다
 + 런타임(Runtime)시에 메소드(Method)의 호출이 결정이 된다.
 + 런타임시에 호출 객체를 알 수 있기에 어떤 객체에 메소드를 호출해야하는지 드러나지 않는다.
+https://multifrontgarden.tistory.com/133
