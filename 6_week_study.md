@@ -134,3 +134,8 @@ public class inheritTest {
     }
 }
 ```
+**실행결과**
+```java
+40
+20
+```
