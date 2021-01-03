@@ -52,6 +52,85 @@ public class inheritTest {
     }
 }
 ```
-```
+```java
 결과 : 부모와 자식의 나이를 덧셈한 결과 30
+```
++ Child 클래스가 Parent 클래스를 상속받았기 때문에 parentAge 값을 사용하여 출력할 수 있었다.
++ 자식 클래스에는 부모 클래스의 필드와 메소드만이 상속되며, 생성자와 초기화 블록은 상속되지 않는다.
++ 부모 클래스의 접근제한자가 private이나 default로 설정된 멤버는 자식 클래스에서 상속받지만 접근 할수 없다.    
++ 자바에서 클래스는 단일 상속만 가능하다.       
+
+---
+### super 키워드     
+super 키워드는 부모 클래스로부터 상속받은 필드나 메소드를 자식 클래스에서 참조하는데 사용하는 참조 변수이다.      
+부모 클래스의 멤버와 자식 클래스의 이름이 같을 경우 super 키워드로 구분할 수 있다.       
+
+**1. super**
+```java
+class Parent {
+    int a = 10;
+}
+
+class Child extends Parent {
+    int a = 20;
+    void print() {
+        System.out.println(a);
+        System.out.println(this.a);
+        System.out.println(super.a);
+    }
+}
+
+
+public class inheritTest {
+
+public static void main(String[] args) {
+    Child child = new Child();
+
+    child.print();
+    }
+}
+```
+```java
+20
+20
+10
+```
+자식 클래스의 필드를 재정의 해주더라도 `super`로 참조하게 될 경우 부모의 값을 가져온다.
+
+---
+**2. super()**
++ super() 메소드는 부모 클래스의 생성자를 호출할 때 사용된다.
++ 부모 클래스의 멤버를 초기화하기 위해서는 자식 클래스의 생성자에서 부모클래스의 생성자까지 호출해야한다.
++ super()를 호출함으로써 부모 클래스의 멤버를 초기화할 수 있다.      
+```java
+class Parent {
+    int a;
+
+    Parent (int n) {
+        a = n;
+    }
+}
+
+class Child extends Parent {
+    int b;
+
+    Child() {
+        super(40);
+        b = 20;
+    }
+
+    void display() {
+        System.out.println(a);
+        System.out.println(b);
+    }
+}
+
+public class inheritTest {
+
+    public static void main(String[] args) {
+        Child child = new Child();
+
+        child.display();
+    }
+}
 ```
