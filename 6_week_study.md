@@ -282,13 +282,52 @@ public class Child extends Parent {
     private int age = 50;
 }
 ```
-부모클래스에 final 키워드를 사용하여 작성해보자        
+부모 클래스에 final 키워드를 사용하여 작성해보자        
 ```java
 public final class Parent {
     public int height = 170;
 }
 ```
 + 부모 클래스를 상속하여 만든 자식 클래스에서 에러가 발생하게 된다.
+
+**final method**       
+부모 클래스에 final method를 작성하고 테스트해보자
+```java
+public class Parent {
+    protected final String methodTest() {
+		
+    }
+}
+```
+```java
+public class Child extends Parent {
+    protected String methodTest() {
+
+}
+```
++ Remove 'final' ... 에러가 발생할 것이다.        
++ 이처럼 final 키워드가 포함되어있는 메소드는 오버라이딩을 할 수 없다.        
+
+**final Field**      
+```java
+public class FinalFieldClass {
+    final int ROWS = 10; // 상수 정의, 이때 초깃값(10)을 반드시 설정
+
+    void f() {
+        int[] intArray = new int[ROWS]; // 상수 활용
+        ROWS = 30; // 컴파일 오류. final 필드 값은 상수으므로 변경할 수 없다.
+    }
+}
+```
+출처 : <https://gmlwjd9405.github.io/2018/08/06/java-final.html>     
++ final 상수 필드를 정의할 때 반드시 초깃값을 지정해야 한다.
++ 상수 필드는 한 번 정의되면 값을 변경할 수 없다.
++ fianl 키워드만을 사용하여 상수를 만들면 FinalFieldClass의 객체들만 사용할 수 있는 상수가 된다.      
+
+프로그램 전체에서 공유하여 사용할 수 있는 상수
++ final 키워드 + static (public static final)
++ public static final double PI = 3.14159265358979323846;
+
 
 ---
 ### Object 
