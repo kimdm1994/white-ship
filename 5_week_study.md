@@ -32,7 +32,7 @@ class charactor_info {
 ---
 ### 인스턴스의 생성과 사용
 
-```java
+```java 
 public class charactor {
     public static void main(String[] args) {
         charactor_info c = new charactor_info();
