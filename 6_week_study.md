@@ -30,7 +30,7 @@ class 자식클래스 명 extends 부모클래스명 { ... }
 
 **예제**
 ```java
-class Parent {
+class Parent { 
     private int a = 10; // public 또는 protected 사용
     public int parentAge = 10;
 }
