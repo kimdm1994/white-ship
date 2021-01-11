@@ -31,7 +31,7 @@ JVM 은 크게 `Class Loader`, `Runtime Data Areas`, `Excution Engine` 3가지�
 **Execution Engine**           
 Load된 Class의 ByteCode를 실행하는 `Runtime Module` 이 `Execution Engine` 이다.       
 실행 엔진은 자바 바이트 코드를 명령어 단위로 읽어서 실행한다.        
-
+ 
 ---
 ### 컴파일 하는 방법
 자바 컴파일러는 자바를 가지고 작성한 자바 소스 코드를 `JVM` 이 이해할 수 있는 `Java Byte Code` 로 변환한다.
