@@ -28,7 +28,7 @@
         <td rowspan="4">단항연산자</td>
         <td>!(논리부정)</td>
         <td>논리값을 부정, True는 false, False는 true 반환</td>
-    </tr>
+    </tr> 
     <tr>
         <td>~(비트 부정)</td>
         <td>해당 데이터의 각 비트는 변환한다.</td>
